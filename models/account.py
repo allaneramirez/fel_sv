@@ -68,3 +68,13 @@ class AccountJournal(models.Model):
     tipo_documento_fel_sv = fields.Selection([('1', 'Factura'), ('3', 'Comprobante de crédito fiscal'), ('4', 'Nota de remisión'), ('5', 'Nota de crédito'), ('6', 'Nota de débito'), ('7', 'Comprobante de retención'), ('8', 'Comprobante de liquidación'), ('9', 'Documento contable de liquidación'), ('11', 'Facturas de exportación'), ('14', 'Factura de sujeto excluido'), ('15', 'Comprobante de donación')], 'Tipo de Documento FEL', copy=False)
     error_en_historial_fel_sv = fields.Boolean('Error FEL en historial', help='Los errores no se muestran en pantalla, solo se registran en el historial')
     enviar_lineas_en_cero_fel_sv = fields.Boolean('Enviar lineas en cero para FEL')
+
+class AccountTax(models.Model):
+    _inherit = 'account.tax'
+
+    codigo_fel_sv = fields.Char('Código FEL')
+
+class ProductTemplate(models.Model):
+    _inherit = "product.template"
+    
+    codigo_unidad_medida_fel_sv = fields.Char('Código Unidad de Medida FEL')
