@@ -7,5 +7,4 @@ from odoo.release import version_info
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    certificador_fel_sv = fields.Selection([], 'Certificador FEL')
-
+    certificador_fel_sv = fields.Selection([], 'Certificador FEL SV')

@@ -24,14 +24,18 @@ import re
 class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
-    firma_fel_sv = fields.Char('Firma FEL', copy=False)
-    condicion_pago_fel_sv = fields.Selection([('1', 'Contado'), ('2', 'Crédito'), ('3', 'Otro')], 'Condicion de Pago FEL')
-    motivo_fel_sv = fields.Char(string='Motivo FEL')
-    documento_xml_fel_sv = fields.Binary('Documento XML FEL', copy=False)
-    documento_xml_fel_sv_name = fields.Char('Nombre documento XML FEL', default='documento_xml_fel.xml', size=32)
-    resultado_xml_fel_sv = fields.Binary('Resultado XML FEL', copy=False)
-    resultado_xml_fel_sv_name = fields.Char('Nombre resultado XML FEL', default='resultado_xml_fel.xml', size=32)
-    certificador_fel_sv = fields.Char('Certificador FEL', copy=False)
+    firma_fel_sv = fields.Char('Firma FEL SV', copy=False)
+    condicion_pago_fel_sv = fields.Selection([('1', 'Contado'), ('2', 'Crédito'), ('3', 'Otro')], 'Condicion de Pago FEL SV')
+    motivo_fel_sv = fields.Char(string='Motivo FEL SV')
+    tipo_anulacion_fel_sv = fields.Char(string='Tipo de Anulación FEL SV')
+    factura_nueva_fel_sv_id = fields.Many2one('account.invoice', string="Factura Nueva FEL SV")
+    responsable_fel_sv_id = fields.Many2one('res.partner', string="Responsable FEL SV")
+    solicitante_fel_sv_id = fields.Many2one('res.partner', string="Solicitante FEL SV")
+    documento_xml_fel_sv = fields.Binary('Documento XML FEL SV', copy=False)
+    documento_xml_fel_sv_name = fields.Char('Nombre documento XML FEL SV', default='documento_xml_fel.xml', size=32)
+    resultado_xml_fel_sv = fields.Binary('Resultado XML FEL SV', copy=False)
+    resultado_xml_fel_sv_name = fields.Char('Nombre resultado XML FEL SV', default='resultado_xml_fel.xml', size=32)
+    certificador_fel_sv = fields.Char('Certificador FEL SV', copy=False)
 
     def num_a_letras(self, amount):
         return a_letras.num_a_letras(amount,completo=True)
@@ -64,17 +68,18 @@ class AccountInvoice(models.Model):
 class AccountJournal(models.Model):
     _inherit = "account.journal"
 
-    generar_fel_sv = fields.Boolean('Generar FEL')
+    generar_fel_sv = fields.Boolean('Generar FEL SV')
     tipo_documento_fel_sv = fields.Selection([('1', 'Factura'), ('3', 'Comprobante de crédito fiscal'), ('4', 'Nota de remisión'), ('5', 'Nota de crédito'), ('6', 'Nota de débito'), ('7', 'Comprobante de retención'), ('8', 'Comprobante de liquidación'), ('9', 'Documento contable de liquidación'), ('11', 'Facturas de exportación'), ('14', 'Factura de sujeto excluido'), ('15', 'Comprobante de donación')], 'Tipo de Documento FEL', copy=False)
-    error_en_historial_fel_sv = fields.Boolean('Error FEL en historial', help='Los errores no se muestran en pantalla, solo se registran en el historial')
-    enviar_lineas_en_cero_fel_sv = fields.Boolean('Enviar lineas en cero para FEL')
+    codigo_establecimiento_sv = fields.Char('Código Establecimiento FEL SV')
+    error_en_historial_fel_sv = fields.Boolean('Error FEL SV en historial', help='Los errores no se muestran en pantalla, solo se registran en el historial')
+    enviar_lineas_en_cero_fel_sv = fields.Boolean('Enviar lineas en cero para FEL SV')
 
 class AccountTax(models.Model):
     _inherit = 'account.tax'
 
-    codigo_fel_sv = fields.Char('Código FEL')
+    codigo_fel_sv = fields.Char('Código FEL SV')
 
 class ProductTemplate(models.Model):
     _inherit = "product.template"
     
-    codigo_unidad_medida_fel_sv = fields.Char('Código Unidad de Medida FEL')
+    codigo_unidad_medida_fel_sv = fields.Char('Código Unidad de Medida FEL SV')
