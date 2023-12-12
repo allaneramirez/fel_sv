@@ -37,10 +37,10 @@ class AccountInvoice(models.Model):
     resultado_xml_fel_sv_name = fields.Char('Nombre resultado XML FEL SV', default='resultado_xml_fel.xml', size=32)
     certificador_fel_sv = fields.Char('Certificador FEL SV', copy=False)
 
-    def num_a_letras(self, amount):
+    def num_a_letras_sv(self, amount):
         return a_letras.num_a_letras(amount,completo=True)
 
-    def error_certificador(self, error):
+    def error_certificador_sv(self, error):
         self.ensure_one()
         factura = self
         if factura.journal_id.error_en_historial_fel:
@@ -48,7 +48,7 @@ class AccountInvoice(models.Model):
         else:
             raise UserError('No se publicó la factura por error del certificador FEL: '+error)
 
-    def requiere_certificacion(self, certificador=''):
+    def requiere_certificacion_sv(self, certificador=''):
         self.ensure_one()
         factura = self
         requiere = factura.is_invoice() and factura.journal_id.generar_fel_sv and factura.amount_total != 0
@@ -56,11 +56,11 @@ class AccountInvoice(models.Model):
             requiere = requiere and ( factura.company_id.certificador_fel_sv == certificador or not factura.company_id.certificador_fel_sv )
         return requiere
 
-    def error_pre_validacion(self):
+    def error_pre_validacion_sv(self):
         self.ensure_one()
         factura = self
         if factura.firma_fel:
-            factura.error_certificador("La factura ya fue validada, por lo que no puede ser validada nuevamente")
+            factura.error_certificador_sv("La factura ya fue validada, por lo que no puede ser validada nuevamente")
             return True
 
         return False
