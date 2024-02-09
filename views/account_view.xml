@@ -13,6 +13,7 @@
                             <group>
                                 <field name="firma_fel_sv"/>
                                 <field name="condicion_pago_fel_sv"/>
+                                <field name="forma_pago_fel_sv"/>
                                 <field name="motivo_fel_sv"/>
                                 <field name="tipo_anulacion_fel_sv"/>
                                 <field name="factura_nueva_fel_sv_id"/>

@@ -26,6 +26,7 @@ class AccountInvoice(models.Model):
 
     firma_fel_sv = fields.Char('Firma FEL SV', copy=False)
     condicion_pago_fel_sv = fields.Selection([('1', 'Contado'), ('2', 'Crédito'), ('3', 'Otro')], 'Condicion de Pago FEL SV')
+    forma_pago_fel_sv = fields.Selection([('01', 'Billetes y monedas'), ('02', 'Tarjeta Débito'), ('03', 'Tarjeta Crédito')], 'Forma de Pago FEL SV')
     motivo_fel_sv = fields.Char(string='Motivo FEL SV')
     tipo_anulacion_fel_sv = fields.Char(string='Tipo de Anulación FEL SV')
     factura_nueva_fel_sv_id = fields.Many2one('account.invoice', string="Factura Nueva FEL SV")
