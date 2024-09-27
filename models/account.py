@@ -60,7 +60,7 @@ class AccountInvoice(models.Model):
     def error_pre_validacion_sv(self):
         self.ensure_one()
         factura = self
-        if factura.firma_fel:
+        if factura.firma_fel_sv:
             factura.error_certificador_sv("La factura ya fue validada, por lo que no puede ser validada nuevamente")
             return True
 
