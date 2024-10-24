@@ -14,17 +14,18 @@
                                 <field name="firma_fel_sv"/>
                                 <field name="condicion_pago_fel_sv"/>
                                 <field name="forma_pago_fel_sv"/>
+                                <field name="factura_original_fel_sv_id"/>
                                 <field name="motivo_fel_sv"/>
                                 <field name="tipo_anulacion_fel_sv"/>
                                 <field name="factura_nueva_fel_sv_id"/>
-                                <field name="responsable_fel_sv_id"/>
-                                <field name="solicitante_fel_sv_id"/>
                             </group>
                             <group>
                                 <field name="documento_xml_fel_sv_name" invisible="1"/>
                                 <field name="documento_xml_fel_sv" readonly="1" filename="documento_xml_fel_name"/>
                                 <field name="resultado_xml_fel_sv_name" invisible="1"/>
                                 <field name="resultado_xml_fel_sv" readonly="1" filename="resultado_xml_fel_name"/>
+                                <field name="responsable_fel_sv_id"/>
+                                <field name="solicitante_fel_sv_id"/>
                             </group>
                         </group>
                     </xpath>
