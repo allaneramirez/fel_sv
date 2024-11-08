@@ -12,6 +12,7 @@
         'views/account_view.xml',
         'views/res_company_view.xml',
         'views/partner_view.xml',
+        'views/res_country_view.xml',
     ],
     'demo': [],
     'installable': True

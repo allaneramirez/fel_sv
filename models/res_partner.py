@@ -12,3 +12,4 @@ class Partner(models.Model):
     tipo_documento_fel_sv = fields.Char('Tipo de Documento FEL SV')
     departamento_fel_sv = fields.Char('Código Departamente FEL SV')
     municipio_fel_sv = fields.Char('Código de Municipio facturación FEL SV')
+    descripcion_actividad_fel_sv = fields.Char('Descripción Actividad FEL SV')
