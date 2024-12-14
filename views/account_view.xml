@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <data>
                     <xpath expr="//page[@id='invoice_tab']" position="inside">
-                        <group>
+                        <group groups="l10n_sv.group_fel_restricted_fields_sv">
                             <group>
                                 <field name="firma_fel_sv"/>
                                 <field name="condicion_pago_fel_sv"/>
@@ -47,7 +47,7 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//search" position="inside">
-                    <field name="numero_control" string="Número de Control FEL"/>
+                    <field name="numero_control" string="Número de Control FEL" groups="l10n_sv.group_fel_restricted_fields_sv"/>
                 </xpath>
             </field>
         </record>
@@ -60,7 +60,7 @@
             <field name="arch" type="xml">
                 <data>
                     <notebook position="inside">
-                        <page string="Extra" name="extra">
+                        <page string="Extra" name="extra" groups="l10n_sv.group_fel_restricted_fields_sv">
                             <group string="Configuración GT">
                                 <field name="generar_fel_sv"/>
                                 <field name="tipo_documento_fel_sv"/>
@@ -76,18 +76,18 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_tax_form_fel_sv">
-            <field name="name">account.tax.form.fel_sv</field>
-            <field name="model">account.tax</field>
-            <field name="inherit_id" ref="account.view_tax_form"/>
-            <field name="arch" type="xml">
-                <data>
-                    <field name="tax_group_id" position="after">
-                        <field name="codigo_fel_sv"/>
-                    </field>
-                </data>
-            </field>
-        </record>
+<!--        <record model="ir.ui.view" id="view_tax_form_fel_sv">-->
+<!--            <field name="name">account.tax.form.fel_sv</field>-->
+<!--            <field name="model">account.tax</field>-->
+<!--            <field name="inherit_id" ref="account.view_tax_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <data>-->
+<!--                    <field name="tax_group_id" position="after">-->
+<!--                        <field name="codigo_fel_sv"/>-->
+<!--                    </field>-->
+<!--                </data>-->
+<!--            </field>-->
+<!--        </record>-->
 
         <record id="product_template_only_form_view_fel_sv" model="ir.ui.view">
             <field name="name">product.template.product.form.fel_sv</field>
@@ -96,9 +96,9 @@
             <field name="arch" type="xml">
                 <data>
                     <field name="taxes_id" position="after">
-                        <field name="codigo_unidad_medida_fel_sv"/>
-                        <field name="tipo_venta"/>
-                        <field name="unidad_medida_fel"/>
+                        <field name="codigo_unidad_medida_fel_sv" groups="l10n_sv.group_fel_restricted_fields_sv"/>
+                        <field name="tipo_venta" groups="l10n_sv.group_fel_restricted_fields_sv"/>
+                        <field name="unidad_medida_fel" groups="l10n_sv.group_fel_restricted_fields_sv"/>
                     </field>
                 </data>
             </field>

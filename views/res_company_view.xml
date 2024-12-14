@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <data>
                     <notebook position="inside">
-                        <page string="Extra">
+                        <page string="Extra" groups="l10n_sv.group_fel_restricted_fields_sv">
                             <group string="FEL">
                                 <group>
                                     <field name="certificador_fel_sv"/>

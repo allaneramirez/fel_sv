@@ -7,23 +7,26 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <data>
+                <data >
+                     <field name="vat" position="attributes" >
+                         <span t-if="user_has_group('l10n_sv.group_fel_restricted_fields_sv')">NIT/DUI</span>
+                     </field>
                     <field name="vat" position="before">
-                         <field name="tipo_documento_fel"/>
+                         <field name="tipo_documento_fel" groups="l10n_sv.group_fel_restricted_fields_sv"/>
                     </field>
                     <field name="vat" position="after">
 <!--                        <field name="nombre_facturacion_fel_sv"/>-->
 
-                        <field name="nombre_comercial"/>
+                        <field name="nombre_comercial" groups="l10n_sv.group_fel_restricted_fields_sv"/>
 <!--                        <field name="nit_facturacion_fel_sv"/>-->
 <!--                        <field name="tipo_documento_fel_sv"/>-->
-                        <field name="departamento_fel_sv"/>
-                        <field name="municipio_fel_sv"/>
-                        <field name="exento_iva"/>
+                        <field name="departamento_fel_sv" groups="l10n_sv.group_fel_restricted_fields_sv"/>
+                        <field name="municipio_fel_sv" groups="l10n_sv.group_fel_restricted_fields_sv"/>
+                        <field name="exento_iva" groups="l10n_sv.group_fel_restricted_fields_sv"/>
 
-                         <field name="descripcion_actividad"/>
-                         <field name="codigo_pais"/>
-                         <field name="tipo_persona"/>
+                         <field name="descripcion_actividad" groups="l10n_sv.group_fel_restricted_fields_sv"/>
+                         <field name="codigo_pais" groups="l10n_sv.group_fel_restricted_fields_sv"/>
+                         <field name="tipo_persona" groups="l10n_sv.group_fel_restricted_fields_sv"/>
 
                     </field>
                 </data>

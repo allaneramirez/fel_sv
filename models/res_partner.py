@@ -12,7 +12,6 @@ class Partner(models.Model):
     nombre_comercial = fields.Char('Nombre Comercial Fel')
     codigo_pais =  fields.Char('Codigo del Pais de Exportación')
     tipo_persona = fields.Selection([('1','Persona Natural'),('2','Persona Juridica')])
-    vat = fields.Char(string='NIT/DUI')
     # nit_facturacion_fel_sv = fields.Char('NIT Facturación FEL SV')
     # tipo_documento_fel_sv = fields.Char('Tipo de Documento FEL SV')
     departamento_fel_sv = fields.Selection(DEPARTAMENTOS_SELECTION,'Código Departamente FEL SV')
@@ -27,5 +26,4 @@ class Partner(models.Model):
             ('02', 'Carnet de Residente'),
         ],
         string='Tipo de Documento',
-        required=True,
     )

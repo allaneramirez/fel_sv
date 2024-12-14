@@ -4,8 +4,8 @@
     'version': '17.0.0.0',
     'category': 'Custom',
     'description': """ Campos y funciones base para la facturación electrónica en El Salvador """,
-    'author': 'aquíH',
-    'website': 'http://aquih.com/',
+    'author': 'Alexander Garzo',
+    'website': 'http://integrall.solutions/',
     'depends': ['l10n_sv'],
     'data': [
         'data/sequence.xml',
@@ -17,6 +17,7 @@
 
     ],
     'demo': [],
-    'installable': True
+    'installable': True,
+    'license': 'LGPL-3',
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

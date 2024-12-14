@@ -10,7 +10,7 @@
                 <data>
                     <field name="taxes_id" position="after">
 <!--                            <field name="tipo_venta"/>-->
-                        <field name="unidad_medida_fel"/>
+                        <field name="unidad_medida_fel" groups="l10n_sv.group_fel_restricted_fields_sv"/>
 
                     </field>
                 </data>
