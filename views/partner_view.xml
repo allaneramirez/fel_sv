@@ -8,14 +8,23 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <data>
+                    <field name="vat" position="before">
+                         <field name="tipo_documento_fel"/>
+                    </field>
                     <field name="vat" position="after">
-                        <field name="nombre_facturacion_fel_sv"/>
-                        <field name="nombre_comercial_fel_sv"/>
-                        <field name="nit_facturacion_fel_sv"/>
-                        <field name="tipo_documento_fel_sv"/>
+<!--                        <field name="nombre_facturacion_fel_sv"/>-->
+
+                        <field name="nombre_comercial"/>
+<!--                        <field name="nit_facturacion_fel_sv"/>-->
+<!--                        <field name="tipo_documento_fel_sv"/>-->
                         <field name="departamento_fel_sv"/>
                         <field name="municipio_fel_sv"/>
-                        <field name="descripcion_actividad_fel_sv"/>
+                        <field name="exento_iva"/>
+
+                         <field name="descripcion_actividad"/>
+                         <field name="codigo_pais"/>
+                         <field name="tipo_persona"/>
+
                     </field>
                 </data>
             </field>

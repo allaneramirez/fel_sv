@@ -1,57 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
-        
-        <record model="ir.ui.view" id="invoice_form_fel_sv">
-            <field name="name">account.invoice.form.fel_sv</field>
-            <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account.invoice_form"/>
+
+        <record model="ir.ui.view" id="view_move_form_fel_sv">
+            <field name="name">account.move.form.fel_sv</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
                 <data>
-                    <field name="comment" position="before">
+                    <xpath expr="//page[@id='invoice_tab']" position="inside">
                         <group>
                             <group>
                                 <field name="firma_fel_sv"/>
                                 <field name="condicion_pago_fel_sv"/>
                                 <field name="forma_pago_fel_sv"/>
-                                <field name="factura_original_fel_sv_id"/>
                                 <field name="motivo_fel_sv"/>
                                 <field name="tipo_anulacion_fel_sv"/>
-                                <field name="factura_nueva_fel_sv_id"/>
-                            </group>
-                            <group>
-                                <field name="documento_xml_fel_sv_name" invisible="1"/>
-                                <field name="documento_xml_fel_sv" readonly="1" filename="documento_xml_fel_name"/>
-                                <field name="resultado_xml_fel_sv_name" invisible="1"/>
-                                <field name="resultado_xml_fel_sv" readonly="1" filename="resultado_xml_fel_name"/>
+                                <field name="factura_nueva_fel_sv_id"
+                                       attrs="{'invisible': [('tipo_anulacion_fel_sv', '!=', '1')]}"/>
                                 <field name="responsable_fel_sv_id"/>
                                 <field name="solicitante_fel_sv_id"/>
                             </group>
+                            <group>
+                                <field name="numero_control"/>
+                                <field name="sello_recepcion"/>
+                                <field name="tipo_documento_fel_sv"/>
+                                <!--                                <field name="documento_xml_fel_sv_name" invisible="1"/>-->
+                                <!--                                <field name="documento_xml_fel_sv" readonly="1" filename="documento_xml_fel_name"/>-->
+                                <!--                                <field name="resultado_xml_fel_sv_name" invisible="1"/>-->
+                                <!--                                <field name="resultado_xml_fel_sv" readonly="1" filename="resultado_xml_fel_name"/>-->
+                            </group>
+                            <group string="Exportacion">
+                                <field name="tipo_item_exportacion"/>
+                                <field name="tipo_exportacion"/>
+                            </group>
                         </group>
-                    </field>
+                    </xpath>
                 </data>
             </field>
         </record>
-        
+        <!--        BUSQUEDA SEARCH-->
+        <record id="view_move_search_numcontrol" model="ir.ui.view">
+            <field name="name">account.move.search.numcontrol</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//search" position="inside">
+                    <field name="numero_control" string="Número de Control FEL"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        -->
         <record model="ir.ui.view" id="journal_form_fel_sv">
             <field name="name">account.journal.form.fel_sv</field>
             <field name="model">account.journal</field>
             <field name="inherit_id" ref="account.view_account_journal_form"/>
             <field name="arch" type="xml">
                 <data>
-                    <field name="group_invoice_lines" position="after">
-                        <field name="generar_fel_sv"/>
-                        <field name="tipo_documento_fel_sv"/>
-                        <field name="condicion_pago_fel_sv"/>
-                        <field name="forma_pago_fel_sv"/>
-                        <field name="codigo_establecimiento_sv"/>
-                        <field name="error_en_historial_fel_sv"/>
-                        <field name="enviar_lineas_en_cero_fel_sv"/>
-                    </field>
+                    <notebook position="inside">
+                        <page string="Extra" name="extra">
+                            <group string="Configuración GT">
+                                <field name="generar_fel_sv"/>
+                                <field name="tipo_documento_fel_sv"/>
+                                <!--                                <field name="condicion_pago_fel_sv"/>-->
+                                <field name="forma_pago_fel_sv"/>
+                                <!--                                <field name="codigo_establecimiento_sv"/>-->
+                                <field name="error_en_historial_fel_sv"/>
+                                <!--                                <field name="enviar_lineas_en_cero_fel_sv"/>-->
+                            </group>
+                        </page>
+                    </notebook>
                 </data>
             </field>
         </record>
-        
+
         <record model="ir.ui.view" id="view_tax_form_fel_sv">
             <field name="name">account.tax.form.fel_sv</field>
             <field name="model">account.tax</field>
@@ -64,7 +88,7 @@
                 </data>
             </field>
         </record>
-        
+
         <record id="product_template_only_form_view_fel_sv" model="ir.ui.view">
             <field name="name">product.template.product.form.fel_sv</field>
             <field name="model">product.template</field>
@@ -73,10 +97,12 @@
                 <data>
                     <field name="taxes_id" position="after">
                         <field name="codigo_unidad_medida_fel_sv"/>
+                        <field name="tipo_venta"/>
+                        <field name="unidad_medida_fel"/>
                     </field>
                 </data>
             </field>
         </record>
-        
+
     </data>
-</openerp>
+</odoo>

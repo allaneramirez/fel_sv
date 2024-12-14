@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--        -->
+        <record model="ir.ui.view" id="journal_form_fel_sv">
+            <field name="name">account.journal.form.fel_sv</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook position="inside">
+                        <page string="Extra" name="extra">
+                            <group string="Configuración GT">
+                                <field name="generar_fel_sv"/>
+                                <field name="tipo_documento_fel_sv"/>
+<!--                                <field name="condicion_pago_fel_sv"/>-->
+                                <field name="forma_pago_fel_sv"/>
+                                <!--                                <field name="codigo_establecimiento_sv"/>-->
+                                <field name="error_en_historial_fel_sv"/>
+<!--                                <field name="enviar_lineas_en_cero_fel_sv"/>-->
+                                <field name="sequence_id" options="{'no_create': True}"/>
+
+                            </group>
+                        </page>
+                    </notebook>
+
+                </data>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

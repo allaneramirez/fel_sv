@@ -3,4 +3,5 @@
 from . import account
 from . import res_company
 from . import res_partner
-from . import res_country
+from . import product_template
+from . import account_journal

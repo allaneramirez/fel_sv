@@ -1,0 +1,44 @@
+<odoo>
+    <data noupdate="1">
+<!--        AGREGAL FEL AL NOMBVRE PARA QUE LO RECONOZCA EN LOS DIAROS-->
+        <record id="seq_account_move_sequential" model="ir.sequence">
+            <field name="name">Facturas Fel</field>
+            <field name="code">factura.fel.sequential</field>
+            <field name="padding">15</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="comprobante_fiscal_sequential_fel" model="ir.sequence">
+            <field name="name">Comprobante Fiscal Fel</field>
+            <field name="code">comp.fiscal</field>
+            <field name="padding">15</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="nt_fiscal_sequential_feel" model="ir.sequence">
+            <field name="name">Notas de Credito Fel</field>
+            <field name="code">nt.fiscal</field>
+            <field name="padding">15</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="exp_fiscal_sequential_feel" model="ir.sequence">
+            <field name="name">Factura Exportacion Fel</field>
+            <field name="code">exp.fiscal</field>
+            <field name="padding">15</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="suje_exc_sequential_feel" model="ir.sequence">
+            <field name="name">Factura Sujeto Exlcuido Fel</field>
+            <field name="code">sexcl.fiscal</field>
+            <field name="padding">15</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>
