@@ -18,7 +18,7 @@
                                 <!--                                <field name="codigo_establecimiento_sv"/>-->
                                 <field name="error_en_historial_fel_sv"/>
 <!--                                <field name="enviar_lineas_en_cero_fel_sv"/>-->
-                                <field name="sequence_id" options="{'no_create': True}"/>
+                                <field name="sequence_id_sv" options="{'no_create': True}"/>
 
                             </group>
                         </page>

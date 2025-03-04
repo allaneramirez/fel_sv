@@ -12,7 +12,7 @@ class AccountJournal(models.Model):
     # codigo_establecimiento_sv = fields.Char('Código Establecimiento FEL SV')
     error_en_historial_fel_sv = fields.Boolean('Error FEL SV en historial', help='Los errores no se muestran en pantalla, solo se registran en el historial')
     # enviar_lineas_en_cero_fel_sv = fields.Boolean('Enviar lineas en cero para FEL SV')
-    sequence_id = fields.Many2one(
+    sequence_id_sv = fields.Many2one(
         'ir.sequence',
         string="Secuencia Numero Control Fel",
         domain="[('name', 'ilike', 'FEL')]",

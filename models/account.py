@@ -57,7 +57,6 @@ class AccountMove(models.Model):
         return False
 
 
-
 class AccountTax(models.Model):
     _inherit = 'account.tax'
 
