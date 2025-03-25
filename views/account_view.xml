@@ -12,6 +12,7 @@
                         <group groups="l10n_sv.group_fel_restricted_fields_sv">
                             <group>
                                 <field name="firma_fel_sv"/>
+                                <field name="numero_documento_fisico"/>
                                 <field name="condicion_pago_fel_sv"/>
                                 <field name="forma_pago_fel_sv"/>
                                 <field name="motivo_fel_sv"/>

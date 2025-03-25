@@ -10,6 +10,7 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     firma_fel_sv = fields.Char('Firma FEL SV', readonly=True)
+    numero_documento_fisico = fields.Char('Numero de Documento Fisico')
     condicion_pago_fel_sv = fields.Selection([('1', 'Contado'), ('2', 'Crédito'), ('3', 'Otro')], 'Condicion de Pago FEL SV')
     forma_pago_fel_sv = fields.Selection([('01', 'Billetes y monedas'), ('02', 'Tarjeta Débito'), ('03', 'Tarjeta Crédito')], 'Forma de Pago FEL SV')
     motivo_fel_sv = fields.Char(string='Motivo FEL SV')
@@ -44,8 +45,11 @@ class AccountMove(models.Model):
     def requiere_certificacion_sv(self):
         self.ensure_one()
         factura = self
-        requiere = factura.journal_id.generar_fel_sv and factura.amount_total != 0
-        return requiere
+        requiere = factura.journal_id.generar_fel_sv and factura.amount_total != 0 and not factura.numero_documento_fisico
+        if not requiere and factura.journal_id.tipo_documento_fel_sv == '5':
+            return True
+        else:
+            return requiere
 
     def error_pre_validacion_sv(self):
         self.ensure_one()
